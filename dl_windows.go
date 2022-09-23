@@ -1,8 +1,10 @@
+//go:build windows
+// +build windows
+
 package dl
 
-// #include <dlfcn.h>
+// #include "dlfcn.h"
 // #include <stdlib.h>
-// #cgo LDFLAGS: -ldl
 import "C"
 
 import (
@@ -17,12 +19,12 @@ import (
 
 const (
 	// dlopen() flags. See man dlopen.
-	RTLD_LAZY     = int(C.RTLD_LAZY)
-	RTLD_NOW      = int(C.RTLD_NOW)
-	RTLD_GLOBAL   = int(C.RTLD_GLOBAL)
-	RTLD_LOCAL    = int(C.RTLD_LOCAL)
-	RTLD_NODELETE = int(C.RTLD_NODELETE)
-	RTLD_NOLOAD   = int(C.RTLD_NOLOAD)
+	RTLD_LAZY   = int(C.RTLD_LAZY)
+	RTLD_NOW    = int(C.RTLD_NOW)
+	RTLD_GLOBAL = int(C.RTLD_GLOBAL)
+	RTLD_LOCAL  = int(C.RTLD_LOCAL)
+	// RTLD_NODELETE = int(C.RTLD_NODELETE)
+	// RTLD_NOLOAD   = int(C.RTLD_NOLOAD)
 )
 
 var (
