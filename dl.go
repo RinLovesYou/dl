@@ -38,6 +38,14 @@ type DL struct {
 	handle unsafe.Pointer
 }
 
+func (d *DL) Ptr() uintptr {
+	return uintptr(d.handle)
+}
+
+func (d *DL) Handle() unsafe.Pointer {
+	return d.handle
+}
+
 // Open opens the shared library identified by the given name
 // with the given flags. See man dlopen for the available flags
 // and its meaning. Note that the only difference with dlopen is that

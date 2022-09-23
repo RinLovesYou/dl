@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"dl"
+	"bootstrap/dl"
 )
 
 func ExampleOpen_snprintf() {
